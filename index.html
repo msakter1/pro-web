@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musammat Akter - Professional Portfolio</title>
+    <link rel="icon" href="images/favicon_io/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -33,7 +35,7 @@
     <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="skills-grid">
+        <div class="about-content">
             <p> 
                 Hi, I'm Musmmat Akter, a junior studying Computer Science at the University of Michigan with a passion for web development and educational technology. My journey in tech has taken me across borders—studying machine learning at Yonsei University—broadening my perspective on global education and innovation. <br> <br>
 
@@ -48,6 +50,7 @@
         </div>
     </section>
 
+
     <!-- Skills Section -->
     <section id="skills">
         <h2 class="section-title">My Skills</h2>
@@ -55,7 +58,7 @@
 
             <div class="skill-card animate">
                 <!-- <i class="fab fa-C++ fa-3x"></i> -->
-                <h3>C++</h3>
+                <h3 class="skill-name">C++</h3>
                 <p>Data structures: queue, stack, map, hash</p>
                 <p>Algorithms: searching, sorting alogirthims</p> <br>
 
@@ -63,29 +66,93 @@
             </div>
            
             <div class="skill-card animate">
-                <h3>HTML, CSS, JavaScript</h3>
+                <h3 class="skill-name">HTML, CSS, JavaScript</h3>
                 <p>Used these skills to build my websites</p>
             </div>
 
             <div class="skill-card animate">
-                <h3>Python</h3>
+                <h3 class="skill-name">Python</h3>
                 <p>Used python to summarize and make visualizations of datasets</p>
             </div>
 
             <div class="skill-card animate">
-                <h3>Tutoring</h3>
+                <h3 class="skill-name" >Tutoring</h3>
                 <p>I tutored students in Algebra, Math and coding</p>
             </div>
         </div>
     </section>
+
 
     <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
             <!-- Add project cards here -->
+
+             <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/pomodoro-website.png" alt="pomodoro-timer-website">
+                    <div class="project-links">
+                        <a href="https://msakter1.github.io/podoromo-timer/index" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/msakter1/podoromo-timer" class="code-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Pomodoro Timer Website</h3>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <p>Created a Pomodoro timer website to help students study more effectively. Users can follow the Pomodoro method while listening to their favorite study music. They can choose from calming background themes and use a to-do list to add tasks, check them off when done, or remove them. During breaks, they can relax by playing simple games like tic-tac-toe.</p>
+                </div>
+            </div>
+
+             <!-- Project 2-->
+             <div class="project-card">
+                <div class="project-image">
+                    <img src="images/euchre-code.png" alt="euchre-game-code">
+                    <div class="project-links">
+                        <a href="" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="" class="code-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Euchre!</h3>
+                    <div class="project-tags">
+                        <span>C++</span>
+                    </div>
+                    <p>
+                        Developed a Euchre game in C++, where four players can take turns making moves by passing or selecting a suit and a card. I'm currently working on creating an interactive website with a user-friendly design to make the game more enjoyable and accessible for users.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+             <div class="project-card">
+                <div class="project-image">
+                    <img src="images/elevator.png" alt="elevator">
+                    <div class="project-links">
+                        <a href="" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="" class="code-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Elevator Game!</h3>
+                    <div class="project-tags">
+                        <span>C++</span>
+                    </div>
+                    <p>
+                        Developed a game in C++ where a player or an AI controls an elevator to guide passengers to their destinations without them exploding. Currently, the game is only available in C++, but I am working on bringing it to a website with a user-friendly design to make it more enjoyable and accessible for players.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
+
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -104,7 +171,7 @@
             <button type="submit" class="cta-btn">Send Message</button>
         </form>
         <div id="formMessage" class="success-message"></div>
-        
+
     </section>
 
     <!-- Footer -->

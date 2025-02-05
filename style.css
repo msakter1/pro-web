@@ -60,7 +60,14 @@ body {
     border: 5px solid white;
     margin-bottom: 2rem;
     object-fit: cover;
+    transition: transform 0.3s;
 }
+
+.profile-pic:hover {
+    box-shadow: red;
+    transform: translateY(-3px);
+}
+
 
 /* Hero Section */
 .hero {
@@ -98,6 +105,9 @@ body {
     transform: translateY(-3px);
 }
 
+
+
+
 /* Sections */
 section {
     padding: 5rem 2rem;
@@ -107,6 +117,8 @@ section {
     text-align: center;
     margin-bottom: 3rem;
 }
+
+
 
 /* Skills Grid */
 .skills-grid {
@@ -129,6 +141,59 @@ section {
     transform: translateY(-5px);
 }
 
+.skill-bars {
+    margin: 2rem 0;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+
+/* About Section */
+/* About Section Styles */
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* .about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-name {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+} */
+
+.about-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.about-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
 /* Projects Grid */
 .projects-grid {
     display: grid;
@@ -149,6 +214,8 @@ section {
     object-fit: cover;
 }
 
+
+
 /* Contact Form */
 .contact-form {
     max-width: 600px;
@@ -167,6 +234,8 @@ input, textarea {
     font-size: 1rem;
 }
 
+
+
 /* Footer */
 footer {
     background: var(--dark-color);
@@ -174,6 +243,8 @@ footer {
     text-align: center;
     padding: 2rem;
 }
+
+
 
 /* Animations */
 @keyframes fadeIn {

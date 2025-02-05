@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form submission
-    // Update form submission logic
     
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
@@ -75,4 +74,26 @@ document.addEventListener('DOMContentLoaded', function() {
             formMessage.style.display = 'none';
         }, 5000);
     }
+
+    // Project 
+    // hover effect for project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.querySelector('.project-links').style.opacity = '1';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.querySelector('.project-links').style.opacity = '0';
+        });
+    });
+
+    // click animation
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
 });

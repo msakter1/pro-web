@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color:  #0c49ad;
-    --secondary-color:  #5994f2;
+    --primary-color:  #1b1e25;
+    --secondary-color:  #25313d;
     --dark-color: #0c49ad;
     --light-color: #ecf0f1;
 }
@@ -18,7 +18,7 @@ html {
 
 body {
     background-color: var(--light-color);
-    color: var(--dark-color);
+    color: var(--primary-color);
 }
 
 /* Navigation */
@@ -26,7 +26,7 @@ body {
     position: fixed;
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(216, 216, 223, 0.95);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
 }
@@ -64,7 +64,6 @@ body {
 }
 
 .profile-pic:hover {
-    box-shadow: red;
     transform: translateY(-3px);
 }
 
@@ -158,7 +157,7 @@ section {
     margin: 0 auto;
     padding: 4rem 2rem;
     line-height: 1.7;
-    color: #333;
+    color: black;
 }
 
 /* .about-header {
@@ -238,7 +237,7 @@ input, textarea {
 
 /* Footer */
 footer {
-    background: var(--dark-color);
+    background: var(--primary-color);
     color: white;
     text-align: center;
     padding: 2rem;

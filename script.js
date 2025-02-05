@@ -26,35 +26,53 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     // Update form submission logic
     
-    const form = document.querySelector('.contact-form');
-    const successMessage = document.createElement('div');
-    successMessage.className = 'success-message';
-    successMessage.textContent = 'Message sent successfully!';
-    form.parentNode.insertBefore(successMessage, form.nextSibling);
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
 
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
+        // Clear previous messages
+        formMessage.textContent = '';
+        formMessage.style.display = 'none';
+
+        // Create JSON payload
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
         try {
-            const response = await fetch(form.action, {
+            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
                 method: 'POST',
-                body: new FormData(form),
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                body: JSON.stringify(formData)
             });
 
+            const result = await response.json();
+
             if (response.ok) {
-                successMessage.style.display = 'block';
+                showMessage('Message sent successfully!', 'success');
                 form.reset();
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 5000);
             } else {
-                alert('There was a problem sending your message. Please try again.');
+                showMessage(`Error: ${result.error}`, 'error');
             }
         } catch (error) {
-            alert('There was a network error. Please try again.');
+            showMessage('Network error. Please try again.', 'error');
         }
     });
+
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.style.color = type === 'success' ? '#2ecc71' : '#e74c3c';
+        formMessage.style.display = 'block';
+        
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+    }
 });

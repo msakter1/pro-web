@@ -26,35 +26,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     // Update form submission logic
     
-    // const form = document.querySelector('.contact-form');
-    // const successMessage = document.createElement('div');
-    // successMessage.className = 'success-message';
-    // successMessage.textContent = 'Message sent successfully!';
-    // form.parentNode.insertBefore(successMessage, form.nextSibling);
+    const form = document.querySelector('.contact-form');
+    const successMessage = document.createElement('div');
+    successMessage.className = 'success-message';
+    successMessage.textContent = 'Message sent successfully!';
+    form.parentNode.insertBefore(successMessage, form.nextSibling);
 
-    // form.addEventListener('submit', async function(e) {
-    //     e.preventDefault();
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-    //     try {
-    //         const response = await fetch(form.action, {
-    //             method: 'POST',
-    //             body: new FormData(form),
-    //             headers: {
-    //                 'Accept': 'application/json'
-    //             }
-    //         });
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-    //         if (response.ok) {
-    //             successMessage.style.display = 'block';
-    //             form.reset();
-    //             setTimeout(() => {
-    //                 successMessage.style.display = 'none';
-    //             }, 5000);
-    //         } else {
-    //             alert('There was a problem sending your message. Please try again.');
-    //         }
-    //     } catch (error) {
-    //         alert('There was a network error. Please try again.');
-    //     }
-    // });
+            if (response.ok) {
+                successMessage.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('There was a problem sending your message. Please try again.');
+            }
+        } catch (error) {
+            alert('There was a network error. Please try again.');
+        }
+    });
 });
